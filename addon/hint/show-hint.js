@@ -243,6 +243,7 @@
       if (cur.className != null) className = cur.className + " " + className;
       elt.className = className;
       if (cur.render) cur.render(elt, data, cur);
+      else if (options.htmlCompletions) elt.innerHTML = cur.displayText
       else elt.appendChild(ownerDocument.createTextNode(cur.displayText || getText(cur)));
       elt.hintId = i;
     }
